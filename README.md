@@ -71,12 +71,16 @@ jobs:
           ref: src-pages
           fetch-depth: 10
 
+      # Note the following may not be required in future versions of Jekyll Build Actions
+      - name: Make build destination directory
+        run: mkdir -vp ~/www/repository-name
+
       - name: Jekyll Build
         uses: gha-utilities/jekyll-build@v0.0.1
         with:
           jekyll_github_token: ${{ secrets.JEKYLL_GITHUB_TOKEN }}
           source: ./
-          destination: /var/www/repository-name
+          destination: ~/www/repository-name
 
       - name: Checkout branch for GitHub Pages
         uses: actions/checkout@v1
@@ -86,7 +90,7 @@ jobs:
           submodules: true
 
       - name: Copy built site files into Git branch
-        run: cp -r /var/www/repository-name ./
+        run: cp -r ~/www/repository-name ./
 
       - name: Open Pull Request
         uses: peter-evans/create-pull-request@v1.5.0
@@ -109,7 +113,7 @@ ___
   "&#x1F5D2; Additional notes and links that may be worth clicking in the future"
 
 
-To pass compiled site files to another workflow utilize the Upload and Download Actions from GitHub...
+To pass compiled site files to another Workflow utilize the Upload and Download Actions from GitHub...
 
 
 **`.github/workflows/jekyll_build.yml`**
@@ -132,17 +136,20 @@ jobs:
           ref: src-pages
           fetch-depth: 10
 
+      - name: Make build destination directory
+        run: mkdir -vp ~/www/repository-name
+
       - name: Jekyll Build
         uses: gha-utilities/jekyll-build@v0.0.1
         with:
           source: ./
-          destination: /var/www/repository-name
+          destination: ~/www/repository-name
 
       - name: Upload Built Pages
         uses: actions/upload-artifact@v1.0.0
         with:
           name: Complied-Jekyll-Pages
-          path: /var/www/repository-name
+          path: ~/www/repository-name
 ```
 
 
@@ -195,7 +202,9 @@ ___
   "&#x1F4C7; Resources that where helpful in building this project so far."
 
 
-- [Bundler Docker Guide](https://bundler.io/v2.0/guides/bundler_docker_guide.html)
+- [Bundler -- Bundler Docker Guide](https://bundler.io/v2.0/guides/bundler_docker_guide.html)
+
+- [GitHub -- Workflow Syntax for GitHub Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions)
 
 
 ___
