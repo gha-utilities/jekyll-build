@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ruby:2.5
 
 
 LABEL "name"="GHA Jekyll Build Container"
@@ -12,7 +12,7 @@ LABEL "com.github.actions.icon"="book"
 LABEL "com.github.actions.color"="black"
 
 
-RUN apt-get install build-essential ruby-full
+# RUN apt-get install build-essential ruby-full
 
 
 ENV GEM_HOME="/usr/local/bundle"
