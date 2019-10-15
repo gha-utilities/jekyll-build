@@ -1,0 +1,22 @@
+name: 'GHA Jekyll Build'
+description: 'Action for running Bundle Install and Jekyll Build within a Docker container'
+author: 'S0AndS0'
+
+
+inputs:
+  source:
+    description: 'Relative path that source files for Jekyll to build exsist'
+    required: true
+  destination:
+    description: 'Path where compiled site files should be saved to'
+    required: true
+
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+
+branding:
+  icon: book
+  color: black
