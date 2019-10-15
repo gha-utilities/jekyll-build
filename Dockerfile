@@ -9,10 +9,10 @@ LABEL "com.github.actions.icon"="book"
 LABEL "com.github.actions.color"="black"
 
 
-FROM ruby:2.5
+FROM ubuntu:latest
 
 
-# RUN apt-get install build-essential ruby-full
+RUN apt-get install build-essential ruby-full
 
 
 ENV GEM_HOME="/usr/local/bundle"

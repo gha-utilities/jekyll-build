@@ -57,7 +57,8 @@ Reference the code of this repository within your own `workflow`...
 ```YAML
 on:
   push:
-    - src-pages
+    branches:
+      - src-pages
 
 jobs:
   jekyll_build:
@@ -117,7 +118,8 @@ To pass compiled site files to another workflow utilize the Upload and Download 
 ```YAML
 on:
   push:
-    - src-pages
+    branches:
+      - src-pages
 
 jobs:
   jekyll_build:
@@ -150,7 +152,8 @@ jobs:
 ```YAML
 on:
   push:
-    - src-pages
+    branches:
+      - src-pages
 
 jobs:
   open_pull_request:
