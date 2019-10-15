@@ -79,7 +79,7 @@ if [ -f "_config.yml" ]; then
 elif [ -f "_config.yaml" ]; then
     _config_file="_config.yaml"
 else
-    printf '%s has no _config.yml or _config.yaml file\n' "${_repo_name}"; exit 1
+    printf 'No _config.yml or _config.yaml file found\n' &>2; exit 1
 fi
 
 
