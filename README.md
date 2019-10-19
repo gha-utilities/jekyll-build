@@ -113,6 +113,12 @@ ___
   "&#x1F5D2; Additional notes and links that may be worth clicking in the future"
 
 
+The `JEKYLL_GITHUB_TOKEN`, should only require `public_repository` scope, and generally is only required if utilizing the `github-metadata` from Jekyll.
+
+
+------
+
+
 To pass compiled site files to another Workflow utilize the Upload and Download Actions from GitHub...
 
 
@@ -205,6 +211,8 @@ ___
 - [Bundler -- Bundler Docker Guide](https://bundler.io/v2.0/guides/bundler_docker_guide.html)
 
 - [GitHub -- Workflow Syntax for GitHub Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions)
+
+- [Jekyll -- `github-metadata` Authentication](https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md)
 
 
 ___
