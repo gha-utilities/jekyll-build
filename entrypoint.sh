@@ -60,12 +60,8 @@ trap 'failure "LINENO" "BASH_LINENO" "${?}"' ERR
 
 
 #
+# Find the config file, install dependencies and build
 #
-#
-
-
-# unset BUNDLE_PATH
-# unset BUNDLE_BIN
 
 
 if (( ${#INPUT_SOURCE} )) && [[ "${PWD}" != "${INPUT_SOURCE}" ]]; then
