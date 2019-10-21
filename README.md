@@ -85,22 +85,35 @@ jobs:
       - name: Checkout branch for GitHub Pages
         uses: actions/checkout@v1
         with:
-          ref: gh-pages
+          ref: pr-pages
           fetch-depth: 1
           submodules: true
 
       - name: Copy built site files into Git branch
         run: cp -r ~/www/repository-name ./
 
-      - name: Open Pull Request
-        uses: peter-evans/create-pull-request@v1.5.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMIT_MESSAGE: Compiles CSS from SCSS files
-          PULL_REQUEST_BODY: >
-            This pull request was auto-generated thanks to [create-pull-request](https://github.com/peter-evans/create-pull-request)
+      - name: Commit changes to pr-pages branch
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'Updates compiled site files'
 
-            And builds Pages with Jekyll via [scss-utilities/gha-sass](https://github.com/gha-utilities/jekyll-build)
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: pr-pages
+
+      - name: Initialize Pull Request
+        uses: gha-utilities/init-pull-request@v0.0.1
+        with:
+          pull_request_token: ${{ secrets.GITHUB_TOKEN }}
+          head: pr-pages
+          base: gh-pages
+          title: 'Updates site files from latest Actions build'
+          body: >
+            Perhaps a multi-line description
+            about latest features and such.
 ```
 
 
@@ -113,7 +126,7 @@ ___
   "&#x1F5D2; Additional notes and links that may be worth clicking in the future"
 
 
-The `JEKYLL_GITHUB_TOKEN`, should only require `public_repository` scope, and generally is only required if utilizing the `github-metadata` from Jekyll.
+The [new](https://github.com/settings/tokens/new) `JEKYLL_GITHUB_TOKEN` should have `public_repo` permissions, be assigned within your project's Secrets Settings, eg. `https://github.com/<maintainer>/<repository>/settings/secrets`, and generally is only required if utilizing the `github-metadata` from Jekyll.
 
 
 ------
@@ -187,15 +200,28 @@ jobs:
           name: Complied-Jekyll-Pages
           path: ./
 
-      - name: Open Pull Request
-        uses: peter-evans/create-pull-request@v1.5.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMIT_MESSAGE: Compiles CSS from SCSS files
-          PULL_REQUEST_BODY: >
-            This pull request was auto-generated thanks to [create-pull-request](https://github.com/peter-evans/create-pull-request)
+      - name: Commit changes to pr-pages branch
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'Updates compiled site files'
 
-            And builds Pages with Jekyll via [scss-utilities/gha-sass](https://github.com/gha-utilities/jekyll-build)
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: pr-pages
+
+      - name: Initialize Pull Request
+        uses: gha-utilities/init-pull-request@v0.0.1
+        with:
+          pull_request_token: ${{ secrets.GITHUB_TOKEN }}
+          head: pr-pages
+          base: gh-pages
+          title: 'Updates site files from latest Actions build'
+          body: >
+            Perhaps a multi-line description
+            about latest features and such.
 ```
 
 
