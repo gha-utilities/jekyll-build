@@ -92,10 +92,11 @@ jobs:
       - name: Copy built site files into Git branch
         run: cp -r ~/www/repository-name ./
 
-      - name: Commit changes to pr-pages branch
+      - name: Add and Commit changes to pr-pages branch
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email 'action@github.com'
+          git config --local user.name 'GitHub Action'
+          git add -A .
           git commit -m 'Updates compiled site files'
 
       - name: Push changes
@@ -200,10 +201,11 @@ jobs:
           name: Complied-Jekyll-Pages
           path: ./
 
-      - name: Commit changes to pr-pages branch
+      - name: Add and Commit changes to pr-pages branch
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email 'action@github.com'
+          git config --local user.name 'GitHub Action'
+          git add -A .
           git commit -m 'Updates compiled site files'
 
       - name: Push changes
