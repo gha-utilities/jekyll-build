@@ -1,13 +1,13 @@
 ## GHA Jekyll Build
 [heading__title]:
-  #gha-sass
+  #jekyll-build
   "&#x2B06; Top of ReadMe File"
 
 
 Action for running Bundle Install and Jekyll Build within a Docker container
 
 
-## [![Byte size of gha-sass][badge__master__gha_sass__source_code]][gha_sass__master__source_code] [![Open Issues][badge__issues__gha_sass]][issues__gha_sass] [![Open Pull Requests][badge__pull_requests__gha_sass]][pull_requests__gha_sass] [![Latest commits][badge__commits__gha_sass__master]][commits__gha_sass__master]
+## [![Byte size of jekyll-build][badge__master__jekyll_build__source_code]][jekyll_build__master__source_code] [![Open Issues][badge__issues__jekyll_build]][issues__jekyll_build] [![Open Pull Requests][badge__pull_requests__jekyll_build]][pull_requests__jekyll_build] [![Latest commits][badge__commits__jekyll_build__master]][commits__jekyll_build__master]
 
 
 ------
@@ -76,7 +76,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.0.1
+        uses: gha-utilities/jekyll-build@v0.0.2
         with:
           jekyll_github_token: ${{ secrets.JEKYLL_GITHUB_TOKEN }}
           source: ./
@@ -160,7 +160,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.0.1
+        uses: gha-utilities/jekyll-build@v0.0.2
         with:
           source: ./
           destination: ~/www/repository-name
@@ -274,38 +274,38 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
 
-[badge__commits__gha_sass__master]:
-  https://img.shields.io/github/last-commit/scss-utilities/gha-sass/master.svg
+[badge__commits__jekyll_build__master]:
+  https://img.shields.io/github/last-commit/gha-utilities/jekyll-build/master.svg
 
-[commits__gha_sass__master]:
-  https://github.com/scss-utilities/gha-sass/commits/master
+[commits__jekyll_build__master]:
+  https://github.com/gha-utilities/jekyll-build/commits/master
   "&#x1F4DD; History of changes on this branch"
 
 
-[gha_sass__community]:
-  https://github.com/scss-utilities/gha-sass/community
+[jekyll_build__community]:
+  https://github.com/gha-utilities/jekyll-build/community
   "&#x1F331; Dedicated to functioning code"
 
 
-[badge__issues__gha_sass]:
-  https://img.shields.io/github/issues/scss-utilities/gha-sass.svg
+[badge__issues__jekyll_build]:
+  https://img.shields.io/github/issues/gha-utilities/jekyll-build.svg
 
-[issues__gha_sass]:
-  https://github.com/scss-utilities/gha-sass/issues
+[issues__jekyll_build]:
+  https://github.com/gha-utilities/jekyll-build/issues
   "&#x2622; Search for and _bump_ existing issues or open new issues for project maintainer to address."
 
 
-[badge__pull_requests__gha_sass]:
-  https://img.shields.io/github/issues-pr/scss-utilities/gha-sass.svg
+[badge__pull_requests__jekyll_build]:
+  https://img.shields.io/github/issues-pr/gha-utilities/jekyll-build.svg
 
-[pull_requests__gha_sass]:
-  https://github.com/scss-utilities/gha-sass/pulls
+[pull_requests__jekyll_build]:
+  https://github.com/gha-utilities/jekyll-build/pulls
   "&#x1F3D7; Pull Request friendly, though please check the Community guidelines"
 
 
-[badge__master__gha_sass__source_code]:
-  https://img.shields.io/github/repo-size/scss-utilities/gha-sass
+[badge__master__jekyll_build__source_code]:
+  https://img.shields.io/github/repo-size/gha-utilities/jekyll-build
 
-[gha_sass__master__source_code]:
-  https://github.com/scss-utilities/gha-sass
+[jekyll_build__master__source_code]:
+  https://github.com/gha-utilities/jekyll-build
   "&#x2328; Project source code!"
