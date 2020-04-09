@@ -76,7 +76,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.0.2
+        uses: gha-utilities/jekyll-build@v0.0.3
         with:
           jekyll_github_token: ${{ secrets.JEKYLL_GITHUB_TOKEN }}
           source: ./
@@ -106,7 +106,7 @@ jobs:
           branch: pr-pages
 
       - name: Initialize Pull Request
-        uses: gha-utilities/init-pull-request@v0.0.2
+        uses: gha-utilities/init-pull-request@v0.0.3
         with:
           pull_request_token: ${{ secrets.GITHUB_TOKEN }}
           head: pr-pages
@@ -160,7 +160,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.0.2
+        uses: gha-utilities/jekyll-build@v0.0.3
         with:
           source: ./
           destination: ~/www/repository-name
@@ -215,7 +215,7 @@ jobs:
           branch: pr-pages
 
       - name: Initialize Pull Request
-        uses: gha-utilities/init-pull-request@v0.0.2
+        uses: gha-utilities/init-pull-request@v0.0.3
         with:
           pull_request_token: ${{ secrets.GITHUB_TOKEN }}
           head: pr-pages
