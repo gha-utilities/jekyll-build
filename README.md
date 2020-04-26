@@ -196,7 +196,7 @@ jobs:
           submodules: true
 
       - name: Download Compiled Pages
-        uses: actions/upload-artifact@v1.0.0
+        uses: actions/download-artifact@v1.0.0
         with:
           name: Complied-Jekyll-Pages
           path: ./
