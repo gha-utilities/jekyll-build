@@ -242,6 +242,8 @@ ___
 
 - [Jekyll -- `github-metadata` Authentication](https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md)
 
+- [GitHub Actions -- `jobs.<job_id>.needs`](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds)
+
 
 ___
 
