@@ -7,7 +7,7 @@
 
 
 # Bash Trap Failure, a submodule for other Bash scripts tracked by Git
-# Copyright (C) 2019  S0AndS0
+# Copyright (C) 2021  S0AndS0
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published
@@ -54,9 +54,10 @@ failure(){
 
     _output_array+=('---')
     printf '%s\n' "${_output_array[@]}" >&2
-    exit ${_code}
+    exit "${_code}"
 }
 trap 'failure "LINENO" "BASH_LINENO" "${?}"' ERR
+set -Ee -o functrace
 
 
 #
