@@ -10,7 +10,7 @@ Action for running Bundle Install and Jekyll Build within a Docker container
 ## [![Byte size of jekyll-build][badge__master__jekyll_build__source_code]][jekyll_build__master__source_code] [![Open Issues][badge__issues__jekyll_build]][issues__jekyll_build] [![Open Pull Requests][badge__pull_requests__jekyll_build]][pull_requests__jekyll_build] [![Latest commits][badge__commits__jekyll_build__master]][commits__jekyll_build__master]
 
 
-------
+---
 
 
 #### Table of Contents
@@ -29,7 +29,7 @@ Action for running Bundle Install and Jekyll Build within a Docker container
 - [:balance_scale: License][heading__license]
 
 
-------
+---
 
 
 
@@ -39,10 +39,10 @@ Action for running Bundle Install and Jekyll Build within a Docker container
   "&#x1F3D7; "
 
 
-Access to GitHub Actions if using on GitHub, or Docker knowhow if utilizing privately.
+Access to GitHub Actions if using on GitHub, or Docker knowledge if utilizing privately.
 
 
-___
+______
 
 
 ## Quick Start
@@ -76,7 +76,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.0.5
+        uses: gha-utilities/jekyll-build@v0.0.6
         with:
           jekyll_github_token: ${{ secrets.JEKYLL_GITHUB_TOKEN }}
           source: ./
@@ -118,7 +118,7 @@ jobs:
 ```
 
 
-___
+______
 
 
 ## Notes
@@ -130,7 +130,7 @@ ___
 The [new](https://github.com/settings/tokens/new) `JEKYLL_GITHUB_TOKEN` should have `public_repo` permissions, be assigned within your project's Secrets Settings, eg. `https://github.com/<maintainer>/<repository>/settings/secrets`, and generally is only required if utilizing the `github-metadata` from Jekyll.
 
 
-------
+---
 
 
 To pass compiled site files to another Workflow utilize the Upload and Download Actions from GitHub...
@@ -160,7 +160,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.0.5
+        uses: gha-utilities/jekyll-build@v0.0.6
         with:
           source: ./
           destination: ~/www/repository-name
@@ -227,7 +227,7 @@ jobs:
 ```
 
 
-___
+______
 
 
 ## Attribution
@@ -245,7 +245,7 @@ ___
 - [GitHub Actions -- `jobs.<job_id>.needs`](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds)
 
 
-___
+______
 
 
 ## License
@@ -311,3 +311,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 [jekyll_build__master__source_code]:
   https://github.com/gha-utilities/jekyll-build
   "&#x2328; Project source code!"
+
