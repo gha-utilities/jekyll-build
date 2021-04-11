@@ -5,7 +5,7 @@ author: 'S0AndS0'
 
 inputs:
   source:
-    description: 'Relative path that source files for Jekyll to build exsist'
+    description: 'Relative path that source files for Jekyll to build exist'
     required: false
   destination:
     description: 'Path where compiled site files should be saved to'
