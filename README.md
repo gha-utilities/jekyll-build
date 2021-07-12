@@ -76,7 +76,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.0.6
+        uses: gha-utilities/jekyll-build@v0.0.7
         with:
           jekyll_github_token: ${{ secrets.JEKYLL_GITHUB_TOKEN }}
           source: ./
@@ -160,7 +160,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.0.6
+        uses: gha-utilities/jekyll-build@v0.0.7
         with:
           source: ./
           destination: ~/www/repository-name
