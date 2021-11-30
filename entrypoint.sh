@@ -76,7 +76,7 @@ if [ -f "_config.yml" ]; then
 elif [ -f "_config.yaml" ]; then
     _config_file="_config.yaml"
 else
-    printf 'No _config.yml or _config.yaml file found\n' &>2; exit 1
+    printf >&2 'No _config.yml or _config.yaml file found\n'; exit 1
 fi
 
 
