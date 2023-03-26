@@ -7,7 +7,7 @@
 
 
 # Bash Trap Failure, a submodule for other Bash scripts tracked by Git
-# Copyright (C) 2021  S0AndS0
+# Copyright (C) 2023  S0AndS0
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published
