@@ -76,7 +76,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.1.1
+        uses: gha-utilities/jekyll-build@v0.1.2
         with:
           jekyll_github_token: ${{ secrets.JEKYLL_GITHUB_TOKEN }}
           source: ./
@@ -160,7 +160,7 @@ jobs:
         run: mkdir -vp ~/www/repository-name
 
       - name: Jekyll Build
-        uses: gha-utilities/jekyll-build@v0.1.1
+        uses: gha-utilities/jekyll-build@v0.1.2
         with:
           source: ./
           destination: ~/www/repository-name
@@ -259,7 +259,7 @@ Legal bits of Open Source software
 
 ```
 Jekyll Build GitHub Actions documentation
-Copyright (C) 2023  S0AndS0
+Copyright (C) 2025  S0AndS0
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
